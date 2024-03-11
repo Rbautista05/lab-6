@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+class Pelicula {
+private:
+    std::string titulo;
+    std::string director;
+    int anio_lansamiento;
+
+public:
+    
+    Pelicula(std::string t, std::string d, int a)
+        : titulo(t), director(d), anio_lansamiento(a) {}
+
+    
+    void setTitulo(std::string t) { titulo = t; }
+    void setDirector(std::string d) { director = d; }
+    void setAnioLanzamiento(int a) { anio_lansamiento = a; }
+
+    
+    std::string getTitulo() { return titulo; }
+    std::string getDirector() { return director; }
+    int getAnioLanzamiento() { return anio_lansamiento; }
+
+    
+    void mostrarInformacion() {
+        std::cout << "Título: " << titulo << "\n";
+        std::cout << "Director: " << director << "\n";
+        std::cout << "Año de lanzamiento: " << anio_lansamiento << "\n";
+    }
+};
+
+int main() {
+    Pelicula pelicula1("El Señor de los Anillos", "Peter Jackson", 2001);
+    pelicula1.mostrarInformacion();
+
+    return 0;
+}
