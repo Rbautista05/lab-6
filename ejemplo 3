@@ -1,0 +1,33 @@
+#include <iostream>
+
+class Calculadora {
+private:
+    double num1;
+    double num2;
+
+public:
+
+    Calculadora(double n1, double n2) : num1(n1), num2(n2) {}
+
+ 
+    double sumar() { return num1 + num2; }
+    double restar() { return num1 - num2; }
+    double multiplicar() { return num1 * num2; }
+    double dividir() {
+        if (num2 == 0) {
+            std::cerr << "Error: Division por cero" << std::endl;
+            return 0;
+        }
+        return num1 / num2;
+    }
+};
+
+int main() {
+    Calculadora calculadora(5, 2);
+    std::cout << "Suma: " << calculadora.sumar() << "\n";
+    std::cout << "Resta: " << calculadora.restar() << "\n";
+    std::cout << "Multiplicación: " << calculadora.multiplicar() << "\n";
+    std::cout << "División: " << calculadora.dividir() << "\n";
+
+    return 0;
+}
