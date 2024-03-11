@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+
+class Libro {
+private:
+    std::string titulo;
+    std::string autor;
+    int anio_publicacion;
+
+public:
+ 
+    Libro(std::string t, std::string a, int y) : titulo(t), autor(a), anio_publicacion(y) {}
+
+ 
+    void setTitulo(std::string t) { titulo = t; }
+    void setAutor(std::string a) { autor = a; }
+    void setAnioPublicacion(int y) { anio_publicacion = y; }
+
+
+    std::string getTitulo() const { return titulo; }
+    std::string getAutor() const { return autor; }
+    int getAnioPublicacion() const { return anio_publicacion; }
+
+    
+    void mostrarInformacion() const {
+        std::cout << "Título: " << titulo << "\n";
+        std::cout << "Autor: " << autor << "\n";
+        std::cout << "Año de publicación: " << anio_publicacion << "\n";
+    }
+};
+
+int main() {
+    Libro libro1("El señor de los anillos", "J.R.R. Tolkien", 1954);
+    libro1.mostrarInformacion();
+
+    return 0;
+}
