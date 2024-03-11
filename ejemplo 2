@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+
+class Estudiante {
+private:
+    std::string nombre;
+    std::string apellido;
+    int edad;
+    std::string curso;
+
+public:
+    
+    Estudiante(std::string n, std::string a, int e, std::string c)
+        : nombre(n), apellido(a), edad(e), curso(c) {}
+
+   
+    void setNombre(std::string n) { nombre = n; }
+    void setApellido(std::string a) { apellido = a; }
+    void setEdad(int e) { edad = e; }
+    void setCurso(std::string c) { curso = c; }
+
+  
+    std::string getNombre() { return nombre; }
+    std::string getApellido() { return apellido; }
+    int getEdad() { return edad; }
+    std::string getCurso() { return curso; }
+
+  
+    void mostrarInformacion() {
+        std::cout << "Nombre: " << nombre << "\n";
+        std::cout << "Apellido: " << apellido << "\n";
+        std::cout << "Edad: " << edad << "\n";
+        std::cout << "Curso: " << curso << "\n";
+    }
+};
+
+int main() {
+    Estudiante estudiante1("Juan", "Perez", 22, "Ingeniería de Software");
+    estudiante1.mostrarInformacion();
+
+    return 0;
+}
